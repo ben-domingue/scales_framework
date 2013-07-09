@@ -1,0 +1,158 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Domingue%
+}{%
+Domingue%
+}{%
+{\protect \APACyear {2012}}%
+{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+conjointchecks}
+\APACinsertmetastar {%
+conjointchecks}%
+\begin{APACrefauthors}%
+Domingue, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012{\protect \BCnt {1}}}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{ConjointChecks}: A package to check the cancellation
+  axioms of conjoint measurement.} {{ConjointChecks}: A package to check the
+  cancellation axioms of conjoint measurement.}{\BBCQ}\
+  [\bibcomputersoftwaremanual].
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Domingue%
+}{%
+Domingue%
+}{%
+{\protect \APACyear {2012}}%
+{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+domingue2012}
+\APACinsertmetastar {%
+domingue2012}%
+\begin{APACrefauthors}%
+Domingue, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2012{\protect \BCnt {2}}}.
+\newblock
+\APACrefbtitle {Evaluating the Equal-Interval Hypothesis with Test Score
+  Scales} {Evaluating the equal-interval hypothesis with test score scales}.
+\newblock
+\BUPhD, University of Colorado Boulder.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Domingue%
+}{%
+Domingue%
+}{%
+{\protect \APACyear {{In Press}}}%
+}]{%
+domingue2013}
+\APACinsertmetastar {%
+domingue2013}%
+\begin{APACrefauthors}%
+Domingue, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{{In Press}}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Evaluating the equal-interval hypothesis with test score
+  scales} {Evaluating the equal-interval hypothesis with test score
+  scales}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychometrika}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Luce%
+\ \BBA {} Tukey%
+}{%
+Luce%
+\ \BBA {} Tukey%
+}{%
+{\protect \APACyear {1964}}%
+}]{%
+luce1964}
+\APACinsertmetastar {%
+luce1964}%
+\begin{APACrefauthors}%
+Luce, R\BPBI D.%
+\BCBT {}\ \BBA {} Tukey, J\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1964}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Simultaneous Conjoint Measurement: A New Type of
+  Fundamental Measurement} {Simultaneous conjoint measurement: A new type of
+  fundamental measurement}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Mathematical Pscyhology}{1}{}{1--27}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Perline%
+, Wright%
+\BCBL {}\ \BBA {} Wainer%
+}{%
+Perline%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1979}}%
+}]{%
+perline1979}
+\APACinsertmetastar {%
+perline1979}%
+\begin{APACrefauthors}%
+Perline, R.%
+, Wright, B\BPBI D.%
+\BCBL {}\ \BBA {} Wainer, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1979}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The {R}asch model as additive conjoint measurement} {The
+  {R}asch model as additive conjoint measurement}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Applied Psychological Measurement}{3}{2}{237--255}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Torres Irribarra}%
+\ \BBA {} Diakow%
+}{%
+{Torres Irribarra}%
+\ \BBA {} Diakow%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+torres2012}
+\APACinsertmetastar {%
+torres2012}%
+\begin{APACrefauthors}%
+{Torres Irribarra}, D.%
+\BCBT {}\ \BBA {} Diakow, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Impact of Instrument Quality on the Selection of a
+  Latent Variable Model} {Impact of instrument quality on the selection of a
+  latent variable model}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {74th Annual Meeting and Training Session.} {74th annual
+  meeting and training session.}
+\newblock
+\APACaddressPublisher{Vancouver, Canada}{National Council on Measurement in
+  Education}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

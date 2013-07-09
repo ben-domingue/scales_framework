@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: writeup.aux
+The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=5001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: ./conjoint.bib
+apacite.bst [2012/02/25 v6.01 APA bibliography style]
+You've used 6 entries,
+            6735 wiz_defined-function locations,
+            1265 strings with 11198 characters,
+and the built_in function-call counts, 11306 in all, are:
+= -- 1498
+> -- 78
+< -- 523
++ -- 519
+- -- 13
+* -- 699
+:= -- 2049
+add.period$ -- 26
+call.type$ -- 6
+change.case$ -- 119
+chr.to.int$ -- 0
+cite$ -- 12
+duplicate$ -- 236
+empty$ -- 428
+format.name$ -- 122
+if$ -- 2189
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 0
+newline$ -- 145
+num.names$ -- 48
+pop$ -- 241
+preamble$ -- 1
+purify$ -- 24
+quote$ -- 0
+skip$ -- 768
+stack$ -- 0
+substring$ -- 567
+swap$ -- 146
+text.length$ -- 12
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 608
+warning$ -- 0
+while$ -- 41
+width$ -- 0
+write$ -- 171
