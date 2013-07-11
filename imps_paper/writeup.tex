@@ -21,39 +21,36 @@
 \maketitle
 \onehalfspacing
 \section{Background}
-This work considers the application of the methodology described in \citeA{domingue2013} to the model selection framework presented by \citeA{torres2012} as an alternative, and more generally applicable, method for identifying the correct generating model of a dataset.
+This paper discusses the application of the `conjoint checks' (CC)methodology described in \citeA{domingue2013} to the Tenable Assessment (TA) model selection framework \citeNP{torres2012}. The CC method offers a more generally applicable alternative for identifying the correct generating model of a dataset that the \textsc{bic}-based comparison originally used by \citeA{torres2012}.
 
-In their model selection framework \citeA{torres2012} arrange a set of latent variable models, including latent class models (\textsc{lca}; Lazarasfeld \& Henry, 1968), ordered latent class models (\textsc{olca}; Croon, 1990), latent class Rasch models (\textsc{lcr}; Formann, 1985) and Rasch models (\textsc{rsh}; Rasch, 1960), according to their assumed latent structure such that progressively more stringent monotonicity and scale assumptions are placed on the latent variable. 
+The TA model selection framework \citeNP{torres2012} arranges a set of latent variable models, including latent class models (\textsc{lca}; Lazarasfeld \& Henry, 1968), ordered latent class models (\textsc{olca}; Croon, 1990), latent class Rasch models (\textsc{lcr}; Formann, 1985) and Rasch models (\textsc{rsh}; Rasch, 1960), according to their assumed latent structure such that progressively more stringent monotonicity and scale assumptions are placed on the latent variable. 
 
 \begin{figure}
 \centering
 \caption{Tenable Assessment Model Selection Framework} \label{orig}
-<<<<<<< HEAD
 \includegraphics[width=\textwidth]{./figs/TAmodelframework.pdf}
-=======
-\includegraphgics[width=\textwidth]{./figs/TAmodelframework.pdf}
->>>>>>> fbd69eeb6a1c6532e5852dc4ed8d6092508dbc1a
 \end{figure}
 
-Accordingly, these models confor a hierarchy where different levels are support different kinds of inference:
+Accordingly, these models conform a hierarchy where different levels support different kinds of inference:
 
 \begin{itemize}
 	\item \textsc{lca} allows qualitative distinctions between groups.
-	\item \textsc{olca} support ordinal inference about persons (when class monotonicity is enforced), items (when invariate item ordering is imposed), or both items and persons (when double monotonicity is applied).
-	\item \textsc{lcr} and \textsc{rsh} entail inferences about quantiative differences.
+	\item \textsc{olca} support ordinal inference about persons (when class monotonicity is enforced), items (when invariant item ordering is imposed), or both items and persons (when double monotonicity is applied).
+	\item \textsc{lcr} and \textsc{rsh} entail inferences about quantitative differences.
 \end{itemize}
 
-The jump from qualitative groups to ordinal levels, and from ordinal levels to quantative differences comes at the additional cost of consireably more stringent assumpations. For data to adequately fit with the latter models, it must be consistent with the the axioms of single (in the case of ordinal models)and double cancellation as described by the theory of additive conjoint measurement (\textsc{adm}; \citeNP{luce1964})\footnote{The higher-order axioms of solvability and the Archimedean condition are typically impossible to verify in practice.}.
+The jump from qualitative groups to ordinal levels, and from ordinal levels to quantitative differences comes at the additional cost of considerably more stringent assumptions. 
+
+% to make tenable inference using these models, the observed data should be consistent 
+
+For data to adequately fit with the latter models, it must be consistent with the the axioms of single (in the case of ordinal models) and double cancellation as described by the theory of additive conjoint measurement (\textsc{adm}; \citeNP{luce1964})\footnote{The higher-order axioms of solvability and the Archimedean condition are typically impossible to verify in practice.}.
 
 The methodology developed by \citeA{domingue2013} and implemented in \citeA{conjointchecks} describes a procedure for checking the consistency of such axioms, and presents a more flexible alternative to the \textsc{bic} based model selection criteria originally used by \citeA{torres2012}, supporting the use of the tenable assessment model selection framework on datasets with larger number of items.
 
-\subsection{Examining Cancelation Axioms}
+\subsection{Examining Cancellation Axioms}
 
-<<<<<<< HEAD
-The Tenable Assessment framework \citeNP{torres2012} leads to several natural hypotheses regarding potential violations to the \textsc{acm} cancelation axioms:
-=======
-The Tenable Assessment framework \citep{torres2012} leads to several natural hypotheses regarding potential violations to the \textsc{acm} cancelation axioms:
->>>>>>> fbd69eeb6a1c6532e5852dc4ed8d6092508dbc1a
+The Tenable Assessment framework \citeNP{torres2012} leads to several natural hypotheses regarding potential violations to the \textsc{acm} cancellation axioms:
+
 \begin{enumerate}
 \item The UN model, since it can be fit to purely nominal data, should yield the most violations.
 \item At least superficially, there is no reason that there should be substantial differences in the number of detected violations between the MON and IIO models since they each support only a single version of the single cancellation axiom.
@@ -62,7 +59,7 @@ The Tenable Assessment framework \citep{torres2012} leads to several natural hyp
 \end{enumerate}
 Note that from the point-of-view of the hierarchy given in Figure \ref{orig}, there should be no difference in the findings with respect to the axioms between the LCR and RSH models. However, there is clearly an important difference between the two since the former allows for only a discrete number of classes while the latter allows for a continuum of scores. 
 
-If these hypotheses hold, then the methodology from \citeA{domingue2013} would provide a fairly simple and convenient criteria to conduct a model selection procedure under the Tenable Assessment Framework. However, the results discussed in this paper do not seem to fully meet the original expectiations, prompting additional investagation. For example, it will be seen that the MON and IIO models produce quite different numbers of axiom violations and this leads us to ask what it is about these models that causes this difference. Alternatively, a failure to find evidence that supports the hypotheses related to double cancellation leads us to argue that checking for double cancellation is probably an intractable problem given the ``messy'' nature of the data in question.
+If these hypotheses hold, then the methodology from \citeA{domingue2013} would provide a fairly simple and convenient criteria to conduct a model selection procedure under the Tenable Assessment Framework. However, the results discussed in this paper do not seem to fully meet the original expectations, prompting additional investigation. For example, it will be seen that the MON and IIO models produce quite different numbers of axiom violations and this leads us to ask what it is about these models that causes this difference. Alternatively, a failure to find evidence that supports the hypotheses related to double cancellation leads us to argue that checking for double cancellation is probably an intractable problem given the `messy nature of the data in question.
 
 \section{Models}
 describe the models in the scale hierarchy. 
@@ -82,7 +79,7 @@ That the algorithm, which simultaneously checks for both forms of single cancell
 \end{figure}
 
 \subsection{IIO versus MON} \label{iio_mon}
-Recall that the IIO model allows for clear ordering of columns while the MON model {\em should} allow for clear ordering of rows. Figure \ref{boxplots_single} compares violation proportions for checks testing only row or column versions of single cancellation in adjacently formed 3-matrcies. The top panel demonstrates that the checks are relatively insensitive to violations associated with column ordering\footnote{there is something about this result that i'm not totally comfortable with and it has to do with the fact that with the mon models, the item parameters should be 'singular' and yet i'm convinced that they're being accurately estimated and this leads to the low violations. what if we looked at fit statistics or SEs for the item parameters here?
+Recall that the IIO model allows for clear ordering of columns while the MON model {\em should} allow for clear ordering of rows. Figure \ref{boxplots_single} compares violation proportions for checks testing only row or column versions of single cancellation in adjacently formed 3-matrcies. The top panel demonstrates that the checks are relatively insensitive to violations associated with column ordering\footnote{there is something about this result that i'm not totally comfortable with and it has to do with the fact that with the mon models, the item parameters should be `singular' and yet i'm convinced that they're being accurately estimated and this leads to the low violations. what if we looked at fit statistics or SEs for the item parameters here?
 ONE WAY OF TESTING THIS WOULD BE TO VARY THE DIFFERENCES BETWEEN THE DIFFICULTIES OF THE COLUMNS. TIGHTER ITEMS, IN THAT THEIR DIFFICULTIES ARE CLOSER, SHOULD LEAD TO MORE ERRORS (AT LEAST FOR IIO). FOR MON, NEED TO EXPERIMENT WITH HOW BAD THE ITEM VIOLATIONS ARE.}, but it is reassuring to note that fewer violations are detected with data generated from the IIO model. The bottom panel shows that the MON model generates large numbers of row violations. Note that it is suprising that the IIO model does not since individuals can not be consistently ordered with this model.  Given that MON maintains person ordering, in contrast to IIO, the opposite is to be expected. The next several sections are an investigation into why we observe so many more MON violations. 
 
 \begin{figure}
