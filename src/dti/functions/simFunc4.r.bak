@@ -36,10 +36,8 @@ sim.LParam <- function ( nC = 6, nI = 6, model = 0, logit = NULL, lC = NULL, lI 
         output <- list()
         
         constraints.check.pending = TRUE
-        nIter = 0
 
     while (constraints.check.pending){
-        nIter = nit+1; print(nIter)
 
         output["model"] <- model        
         output["nC"]    <- nC
@@ -56,9 +54,6 @@ sim.LParam <- function ( nC = 6, nI = 6, model = 0, logit = NULL, lC = NULL, lI 
         
             if ( is.null( lC ) ) { lC <- rnorm( nC ) }
             if ( is.null( lI ) ) { lI <- runif( nI , min = -5, max = 5) }
-                        
-            lC <- sort(lC)
-            lI <- sort(lI)
             
             logit <- matrix( rep( sort(-lI), nR ), ncol = nI, byrow = TRUE)
             logit <- apply( logit, 2, '+', lC)
@@ -86,9 +81,6 @@ sim.LParam <- function ( nC = 6, nI = 6, model = 0, logit = NULL, lC = NULL, lI 
                 
             if ( is.null( lI ) ) { lI <- runif( nI , min = -5, max = 5 ) }
             
-            lC <- sort(lC)
-            lI <- sort(lI)
-            
             logit <- matrix( rep( sort(-lI), nC ), ncol = nI, byrow = TRUE)
             logit <- apply( logit, 2, '+', lC)
             
@@ -114,9 +106,9 @@ sim.LParam <- function ( nC = 6, nI = 6, model = 0, logit = NULL, lC = NULL, lI 
 
         # Checking that only the model specified constraints are being fulfilled.
 
-        if (model == 0 & !any(param.check.constraints(prob))) {
+        if (model == 0 & !any(check.constraints(prob))) {
 
-            constraints.check.pending = FALSE
+            constraints.check = FALSE
 
         }
 
