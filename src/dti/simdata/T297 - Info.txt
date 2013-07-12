@@ -1,0 +1,24 @@
+[1] "The model used to generate the data was 5"
+[1] "The model included NULL classes and  NULL items"
+[1] "The simulated dataset contained NULL respondents"
+[1] "The proportions assigned to the classes are "
+[1] "The respondents were assigned to the classes with frequencies "
+[1] ""
+[1] "The generating parameters (as logits) are:"
+      c1    c2    c3    c4    c5    c6
+i1 -4.84 -4.20 -3.92 -3.37 -2.99 -1.96
+i2 -4.68 -4.04 -3.75 -3.20 -2.83 -1.80
+i3 -0.62  0.02  0.30  0.85  1.23  2.26
+i4 -0.08  0.56  0.84  1.40  1.77  2.80
+i5  1.43  2.07  2.35  2.90  3.27  4.30
+i6  1.61  2.25  2.53  3.08  3.45  4.48
+[1] ""
+[1] "The generating parameters (as Pr[x_ri]) are:"
+     c1   c2   c3   c4   c5   c6
+i1 0.01 0.01 0.02 0.03 0.05 0.12
+i2 0.01 0.02 0.02 0.04 0.06 0.14
+i3 0.35 0.50 0.57 0.70 0.77 0.91
+i4 0.48 0.64 0.70 0.80 0.85 0.94
+i5 0.81 0.89 0.91 0.95 0.96 0.99
+i6 0.83 0.90 0.93 0.96 0.97 0.99
+[1] ""

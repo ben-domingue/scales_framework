@@ -22,9 +22,9 @@ plot.LParam <- function(x,scale = "logit"){
     
 }
 
-nC = 6 
-nI = 6 
-model = 1
+# nC = 6 
+# nI = 6 
+# model = 1
 
 sim.LParam <- function ( nC = 6, nI = 6, model = 0, logit = NULL, lC = NULL, lI = NULL) {
         
@@ -39,7 +39,7 @@ sim.LParam <- function ( nC = 6, nI = 6, model = 0, logit = NULL, lC = NULL, lI 
         nIter = 0
 
     while (constraints.check.pending){
-        nIter = nit+1; print(nIter)
+        nIter = nIter+1; print(nIter)
 
         output["model"] <- model        
         output["nC"]    <- nC
@@ -55,7 +55,7 @@ sim.LParam <- function ( nC = 6, nI = 6, model = 0, logit = NULL, lC = NULL, lI 
         
         
             if ( is.null( lC ) ) { lC <- rnorm( nC ) }
-            if ( is.null( lI ) ) { lI <- runif( nI , min = -5, max = 5) }
+            if ( is.null( lI ) ) { lI <- runif( nI , min = -4, max = 4) }
                         
             lC <- sort(lC)
             lI <- sort(lI)
@@ -154,42 +154,52 @@ sim.LParam <- function ( nC = 6, nI = 6, model = 0, logit = NULL, lC = NULL, lI 
 
 }
 
+# test <- sim.LParam( nC = 6, nI = 6, model = 3)
+# param.check.constraints(test$prob)
+# plot.LParam(test)
 
-test <- sim.LParam( nC = 6, nI = 6, model = 5)
-param.check.constraints(test$prob)
-plot.LParam(test)
+
+# LPar <- test
+# nR < - 500
+# prRespC <- rep(1/6, 6)
+
+# prItemC <- rep(1/6, 6)
+# nI <- 30
 
 
-sim.OResp <- function ( LPar, prC = NULL, nR = NULL){
+ LPar = model.LParam
+ prRespC = prRespC
+ nR = nR
+ prItemC = prItemC
+ nI = nI
+
+
+sim.OResp2 <- function ( LPar, prRespC = NULL, nR = NULL, prItemC = NULL, nI = NULL){
 
     output <- list()
-    
+
     if ( LPar["model"] < 5){
 
-        if ( ( is.null(prC) ) | ( is.null(nR) ) ) { return( print("Error: Class proportions or number of cases missing.")) }
-
-        if ( LPar["nC"] != length(prC) ) { return( print("Error: Class proportions do not match nClass.")) }
-    
-        cR      <- rep( seq( 1: length( prC) ) , rmultinom( 1, nR, prC) )
+        cR      <- rep( seq( 1: length( prRespC) ) , rmultinom( 1, nR, prRespC) )
         cR      <- sample( cR, size = nR)
 
-        prRI    <- LPar[["prob"]][ cR, ]
-        
+        cI      <- rep( seq( 1: length( prItemC) ) , rmultinom( 1, nI, prItemC) )
+        cI      <- sample( cI, size = nI)
+
+        prRI    <- LPar[["prob"]][ cR, cI]
+
         genD    <- cbind( cR, prRI)
 
     }
 
     if ( LPar["model"] == 5){
-
-#        if ( ( !is.null(prC) ) | ( !is.null(nR) ) ) { return( print("Error: Class proportions or number of cases should not be included for model 5.")) }
     
         nR      <- LPar[["nR"]]
         prRI    <- LPar[["prob"]]
-        
         genD    <- prRI
     
     }
-    
+
     respRI  <- matrix( sapply( c(prRI), rbinom, n = 1, size = 1), ncol = ncol(prRI))
     
     obsD    <- respRI
@@ -199,14 +209,21 @@ sim.OResp <- function ( LPar, prC = NULL, nR = NULL){
     output[["obsData"]] <- obsD
     output[["genData"]] <- genD 
     output["model"]     <- LPar["model"]
-    output["nC"]        <- LPar["nC"]
-    output["nI"]        <- LPar["nI"]
-    output["nR"]        <- nR
+    output["nrespC"]    <- LPar["nC"]
+
+    output["nitemC"]    <- LPar["nI"]
+
     
     if ( LPar["model"] < 5){
-    
-        output[["cR"]]      <- table(cR)
-        output[["prC"]]     <- prC
+
+        output["nR"]        <- nR
+        output["nI"]        <- nI
+
+        output[["cR"]]       <- table(cR)
+        output[["prRespC"]]  <- prRespC    
+
+        output[["cI"]]       <- table(cI)
+        output[["prItemC"]]  <- prItemC
     
     }
 
@@ -224,4 +241,19 @@ sim.OResp <- function ( LPar, prC = NULL, nR = NULL){
 
 }
     
+
+
+
+# test <- sim.LParam( nC = 6, nI = 6, model = 4)
+# param.check.constraints(test$prob)
+# plot.LParam(test)
+
+
+# LPar <- test
+# nR < - 500
+# prC <- rep(1/6, 6)
+
+
+# sim.OResp(test, prC, nR)
+
 
