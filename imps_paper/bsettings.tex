@@ -1,0 +1,89 @@
+%% Based on a TeXnicCenter-Template by Tino Weinkauf.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[utf8]{inputenc}
+\usepackage[ansinew]{inputenc}
+
+\usepackage[english]{babel}
+%\usepackage[bibnewpage]{apacite}
+%\usepackage{natbib}
+
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+
+\usepackage{amsmath, amsbsy, amssymb}
+
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{caption}
+
+\usepackage{soul} %for highlighting for mark?
+\usepackage{color}
+%\sethlcolor{white}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Beamer Stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\Tiny=\tiny
+
+\mode<article>
+{
+  \usepackage{fullpage}
+  \usepackage{pgf}
+  \usepackage{hyperref}
+  \setjobnamebeamerversion{example.beamer}
+}
+
+\mode<presentation>
+{
+  % \usetheme{Dresden}
+  % \usetheme{Marburg}
+  % \usetheme{Hannover}
+  \usetheme{Singapore}
+  % \useoutertheme{smoothbars}
+  % \useoutertheme{infolines}
+  \usecolortheme{seagull}
+  \setbeamercovered{invisible}
+  \setbeamertemplate{navigation symbols}{}%remove navigation symbols
+%  \setbeamertemplate{footline}[page number]
+  \setbeamertemplate{footline}[frame number]
+}
+
+\mode<handout>
+{
+%%% In handout mode give the individual pages a light grey background
+\setbeamercolor{background canvas}{bg=black!5}
+%%% Put more than one frame on each page to save paper.
+\usepackage{pgfpages}
+\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=3mm, landscape]
+% \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=5mm, portrait]
+% \setbeameroption{show notes}
+}
+% \usepackage[latin1]{inputenc}
+
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{frametitle continuation}[from second]
+
+\setbeamercovered{transparent}
+
+%\usepackage{appendixnumberbeamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[osf]{mathpazo}
+%\linespread{1.05}         % Palatino needs more leading (space between lines)
+
+%\usepackage{pxfonts}
+%\usepackage{eulervm}
+

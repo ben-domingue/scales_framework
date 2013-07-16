@@ -1,0 +1,231 @@
+%%% Uncomment the following for normal slide show
+\documentclass[10pt,serif,professionalfont]{beamer}
+
+%%% or uncomment this for handouts
+% \documentclass[handout,ignorenonframetext]{beamer}
+
+%%% or uncomment this for the article version
+% \documentclass[11pt]{article}
+% \usepackage{beamerarticle}
+
+%\input{/Users/dti/Dropbox/Library/Latex/bsettings.tex} %David I didn't have access to this file!!!
+\input{bsettings}
+\usepackage{outlines}
+
+\title{Applying the Axioms of Additive Conjoint Measurement to a Hierarchy of Latent Variable Models}
+
+\author{Benjamin Domingue\inst{1} \and David Torres Irribarra\inst{2} \and Ronli Diakow\inst{3}}
+
+\subject{Tenable Assessment}
+
+\date{July 2013}
+
+\institute[University of California, Berkeley]{
+  \inst{1} University of Colorado at Boulder \and
+  \inst{2} University of California, Berkeley \and
+  \inst{3} New York University}
+
+\begin{document}
+
+\frame{\maketitle}
+
+\section{Two methods}
+\begin{frame}
+    \frametitle{Score scales and latent structure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{A tale of two methods}
+    
+    Torres Irribarra and Diakow -- framework / hierarchy of latent variable models according to latent structure / implied/supportable scale (qualitative, ordinal, interval), check using standard model fit indices
+    
+    Domingue -- whether data consistent with the Rasch model possessed sufficient structure, according to the axioms of Additive Conjoint Measurement (ACM; Luce \& Tukey, 1964), to support a score scale with interval properties
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{A hierarchy of latent variable models}
+
+    [equations]
+
+    [figures]
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Additive conjoint measurement (\textsc{acm})}
+
+    \textsc{acm} is [unclear to me] 
+
+    axioms: cancellation, solvability, archimedes
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Cancellation axioms}
+    
+    [set of matrices used to explain]
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Applying the axioms of \textsc{acm}}
+
+    Domingue method to check cancellation axioms -- estimate credible intervals with relevant cancellation constraints and check if observed data within interval
+    
+    Previously applied to Rasch model
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+
+    [new figure showing relationship of hierarchy to axioms]
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+
+\end{frame}
+
+
+\section{Study design}
+
+\begin{frame}
+    \frametitle{Hypotheses}
+    
+    \begin{enumerate}
+    \item \textsc{un} model -- most violations
+    \item symmetry between \textsc{mon} and \textsc{iio} models
+    \item order: \textsc{mon} / \textsc{iio}, \textsc{dm}, \textsc{lcr} / \textsc{rm}
+    \end{enumerate}
+    
+    
+    If hold, straightforward criteria to distinguish latent structure 
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Simulation design}
+
+    generate data under each of six models
+    
+    1000 people in 6 latent classes and 50 items in 6 latent groups
+    
+    50 replications for each model
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Analysis}
+
+    ConjointChecks, each single cancellation and double cancellation
+    
+    \% weighted violations
+
+\end{frame}
+
+
+\section{Results}
+
+\begin{frame}
+    \frametitle{Double cancellation}
+
+    [include figure]
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Single cancellation -- Person ordering}
+
+    \centering \includegraphics[width=1\textwidth]{./figs/violations_columns_weighted.pdf}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Single cancellation -- Item ordering}
+
+    \centering \includegraphics[width=1\textwidth]{./figs/violations_rows_weighted.pdf}
+
+\end{frame}
+
+
+\section{Discussion}
+
+\begin{frame}
+    \frametitle{Person monotonicity versus item ordering}
+
+    precision / aggregation
+    
+    how this simulation is different from how we usually treat persons and items
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Reconsidering double cancellation}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Further thoughts}
+
+\end{frame}
+
+\frame[contactinfo]{
+
+    \begin{center}
+
+    \Large Applying the Axioms of Additive Conjoint Measurement to a Hierarchy of Latent Variable Models
+
+    \vspace{10mm}
+
+    \small
+
+    \begin{tabular}{rl}
+
+    	xxx@xxx.xxx          & \textsc{Benjamin Domingue} \\
+        dti@berkeley.edu     & \textsc{David Torres Irribarra} \\
+    	rdiakow@berkeley.edu & \textsc{Ronli Diakow}
+    	
+    \end{tabular}
+	
+    \end{center}
+
+    \vspace{10mm}
+
+%    \scriptsize
+%    \hspace{5mm} Torres Irribarra, D., and Diakow, R.  (2011, July).  Model Selection for Tenable Assessment: Selecting a Latent Variable Model by Testing the Assumed Latent Structure.  Paper presented at the 76th Annual and 17th International Meeting of the Psychometric Society, Hong Kong.
+
+
+}
+
+
+%back-up slides
+\appendix
+
+%fix so slide numbering ignores back-up slides
+\newcounter{finalpage}
+\setcounter{finalpage}{\value{page}}
+\newcounter{finalframe}
+\setcounter{finalframe}{\value{framenumber}}
+\setbeamertemplate{footline}{}
+
+\begin{frame}
+
+    \centering Appendix Slides
+
+\end{frame}
+
+%fix so slide numbering ignores back-ups
+\setcounter{page}{\value{finalpage}}
+\setcounter{framenumber}{\value{finalframe}}
+
+\end{document}
+
+
+\begin{frame}
+    \frametitle{}
+
+\end{frame}
