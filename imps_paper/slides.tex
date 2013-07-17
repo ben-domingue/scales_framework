@@ -42,7 +42,7 @@
     
     Torres Irribarra and Diakow -- framework / hierarchy of latent variable models according to latent structure / implied/supportable scale (qualitative, ordinal, interval), check using standard model fit indices
     
-    Domingue -- whether data consistent with the Rasch model possessed sufficient structure, according to the axioms of Additive Conjoint Measurement (ACM; Luce \& Tukey, 1964), to support a score scale with interval properties
+    Domingue -- do data possess sufficient structure, as judged by the axioms of conjoint measurement, to yield interval scales%bd whether data consistent with the Rasch model possessed sufficient structure, according to the axioms of Additive Conjoint Measurement (ACM; Luce \& Tukey, 1964), to support a score scale with interval properties
 
 \end{frame}
 
@@ -58,23 +58,38 @@
 \begin{frame}
     \frametitle{Additive conjoint measurement (\textsc{acm})}
 
-    \textsc{acm} is [unclear to me] 
+    If the axioms of \textsc{acm} hold in item response data, then it is possible to create interval scales for the abilities/difficulties of the people/items that generated the data. %bd is [unclear to me] 
 
-    axioms: cancellation, solvability, archimedes
+    axioms: Focus is on single and double cancellation axioms. %bdcancellation, solvability, archimedes 
 
 \end{frame}
 
-\begin{frame}
+\begin{frame} %bd
     \frametitle{Cancellation axioms}
-    
-    [set of matrices used to explain]
-    
+    Single cancellation: Rows or columns can be consistently ordered.%bd
+    %bd [set of matrices used to explain]
+
+Easiest to see in a $3 \times 3$ matrix formed by the selection of 3 items and 3 abilities:
+\[
+\begin{array}{ccc}
+  \cdot&x_{12} &x_{13}  \\
+  x_{21}&\cdot&x_{23} \\
+  x_{31} & x_{32}&\cdot\\
+\end{array}.
+\]
+Two forms: 
+\begin{enumerate}
+\item If $x_{21}<x_{12} \& x_{32}<x_{23} \text{then} x_{31}<x_{13}$. 
+\item If $x_{21}>x_{12} \& x_{32}>x_{23} \text{then} x_{31}>x_{13}$. 
+\end{enumerate}
+Key is that double cancellation imposes some order on the very messy minor diagonal.
+
 \end{frame}
 
 \begin{frame}
     \frametitle{Applying the axioms of \textsc{acm}}
 
-    Domingue method to check cancellation axioms -- estimate credible intervals with relevant cancellation constraints and check if observed data within interval
+    Domingue method to check cancellation axioms -- estimate posterior for a cell using relevant cancellation constraints to form the jumping distribution and then check if observed proportions fit within posterior%bdDomingue method to check cancellation axioms -- estimate credible intervals with relevant cancellation constraints and check if observed data within interval
     
     Previously applied to Rasch model
 
@@ -96,11 +111,11 @@
 \section{Study design}
 
 \begin{frame}
-    \frametitle{Hypotheses}
+    \frametitle{Hypotheses/Questions %bd}
     
     \begin{enumerate}
     \item \textsc{un} model -- most violations
-    \item symmetry between \textsc{mon} and \textsc{iio} models
+    \item symmetry between \textsc{mon} and \textsc{iio} models?
     \item order: \textsc{mon} / \textsc{iio}, \textsc{dm}, \textsc{lcr} / \textsc{rm}
     \end{enumerate}
     
