@@ -11,19 +11,22 @@
 %\input{/Users/dti/Dropbox/Library/Latex/bsettings.tex} %David I didn't have access to this file!!!
 \input{bsettings}
 \usepackage{outlines}
+\usepackage{multirow}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 \title{Applying the Axioms of Additive Conjoint Measurement to a Hierarchy of Latent Variable Models}
 
-\author{Benjamin Domingue\inst{1} \and David Torres Irribarra\inst{2} \and Ronli Diakow\inst{3}}
+\author{Ronli Diakow\inst{1}\footnote[frame]{Authors are listed in alphabetical order.} \and Benjamin Domingue\inst{2}\footnotemark[1] \and David Torres Irribarra\inst{3}\footnotemark[1]}
 
 \subject{Tenable Assessment}
 
 \date{International Meeting of the Psychometric Society \\ July 25, 2013}
 
-\institute[University of California, Berkeley]{
-  \inst{1} University of Colorado at Boulder \and
-  \inst{2} University of California, Berkeley \and
-  \inst{3} New York University}
+\institute[]{
+  \inst{1} New York University \and 
+  \inst{2} University of Colorado at Boulder \and
+  \inst{3} University of California, Berkeley}
 
 \begin{document}
 
@@ -34,10 +37,11 @@
     \frametitle{Score scales and latent structure}
 
     \begin{outline}
-        \1 We want to adequately characterize psychological and educational variables. 
+        \1 We want to appropriately characterize psychological and educational variables. 
             \2 Are differences between respondents categorical?  ordered?  distances?  
             \2 How can we determine the (``correct'') generating model?  
-            
+        
+        \vspace{0.25cm}    
         
         \1 This issue has both theoretical and practical importance.  
             \2 Foundation of many debates in policy and substantive research
@@ -54,7 +58,11 @@
     \begin{outline}
         %\1 There have been a number of theoretical challenges regarding the possibility, in principle, of making this distinctions in psychometric (references).
         \1 Joint work based on two previous lines of research:
+        \vspace{0.1cm}
             \2 Torres Irribarra and Diakow -- Can we determine the structure (qualitative, ordinal, interval) of a latent variable by model fit comparisons within a hierarchical model framework that places progressively more stringent monotonicity and scale assumptions on the latent variable?
+            
+            \vspace{0.25cm}
+            
             \2 Domingue -- Do data possess sufficient structure, as judged by the axioms of conjoint measurement, to yield interval scales?
     \end{outline}
 
@@ -117,13 +125,13 @@
 
         \item Located Latent Class Model or Latent Class Rasch Model (\textsc{lcr}):
             \begin{equation*} \label{eqn:LCR}
-                logit [ Pr(x_{ic} = 1 | \theta_c, \delta_i)] = \theta_c - \delta_i
+                \mathrm{logit} [ Pr(x_{ic} = 1 | \theta_c, \delta_i)] = \theta_c - \delta_i
             \end{equation*}
 
-        \item Rasch Model (\textsc{rsh}):
+        \item Rasch Model (\textsc{rm}):
             \begin{equation*}
                 \label{eqn:RSH}
-                logit [ Pr(x_{ip} = 1 | \theta_p, \delta_i)] = \theta_p - \delta_i
+                \mathrm{logit} [ Pr(x_{ip} = 1 | \theta_p, \delta_i)] = \theta_p - \delta_i
             \end{equation*}
     \end{enumerate}
 
@@ -205,6 +213,8 @@
     \begin{outline}
         \1 Domingue expanded and improved a Bayesian method for checking the single and double cancelation constraints
             \2 Accounts for measurement error in the observed proportions
+
+        \vspace{0.25cm}
         
         \1 The method implemented in the R package ConjointChecks: 
             \2 Estimate the posterior for the probability of a correct response within each cell using relevant cancelation constraints to form the jumping distribution
@@ -227,40 +237,59 @@
 \section{Study design}
 
 \begin{frame}
-    \frametitle{Hypotheses/Questions }
+    \frametitle{Hypotheses}
+    
+    \parskip 12pt
 
-    \begin{enumerate}
-    \item Data generated under an \textsc{un} model should yield the most violations.
-    \item The ammount of single cancelation violations under the \textsc{mon} and \textsc{iio} models should be similar.
-    \item The \textsc{dm} model should comply with both single cancelations, but not with double cancelation.
-    \item The \textsc{lcr} and \textsc{rm} should have the smalles number of violations.
-    \item In summ, the expected order is:
-        \begin{itemize}
-            \item \textsc{un} > ( \textsc{mon} $\sim$ \textsc{iio} ) > \textsc{dm} > ( \textsc{lcr} $\sim$ \textsc{rm} )
-        \end{itemize}
-    \end{enumerate}
+    The expected order for the number of violations of the cancelation axioms is  
+    \textsc{un} > ( \textsc{mon} $\sim$ \textsc{iio} ) > \textsc{dm} > ( \textsc{lcr} $\sim$ \textsc{rm} )
+
+    \begin{center}
+    \begin{tabular}{lccc}
+    \toprule
+     \multirow{3}{*}{Model} & \multicolumn{3}{c}{Could violate cancelation axiom} \\ \cmidrule(lr){2-4}
+                & \multicolumn{2}{c}{Single} & \multirow{2}{*}{Double} \\ \cmidrule(lr){2-3}
+                  & Rows       & Columns    &            \\
+    \midrule
+     \textsc{un}  & \checkmark & \checkmark & \checkmark \\
+     \textsc{mon} &            & \checkmark & \checkmark \\
+     \textsc{iio} & \checkmark &            & \checkmark \\
+     \textsc{dm}  &            &            & \checkmark \\
+     \textsc{lcr} &            &            &            \\
+     \textsc{rm}  &            &            &            \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
 
     If these hypotheses hold, then we potentially have a fairly straightforward criteria to recover the generating latent structure.
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Simulation design}
+    \frametitle{Simulation design and analysis}
 
-    generate data under each of six models
+        \begin{outline}
+        \1 Generate data under each of six models 
+        \renewcommand{\outlineii}{enumerate}
+            \2 Use original data from Diakow and Torres Irribarra
+                \3 5000 people in 2-6 classes
+                \3 10 items
+                \3 30 replications per model
+            \2 Simulate new data 
+                \3 1000 people in 6 classes
+                \3 50 items in 6 groups
+                \3 50 replications per model
+        
+        \vspace{0.25cm}
+        
+        \1 Check for violations of the cancelation axioms using ConjointChecks
+        \renewcommand{\outlineii}{itemize}
+            \2 Double cancelation and each single cancelation separately
 
-    1000 people in 6 latent classes and 50 items in 6 latent groups
+        \vspace{0.25cm}
 
-    50 replications for each model
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{Analysis}
-
-    ConjointChecks, each single cancellation and double cancellation
-
-    \% weighted violations
+        \1 Record the \% of (weighted) violations for each model
+    \end{outline}
 
 \end{frame}
 
@@ -268,45 +297,79 @@
 \section{Results}
 
 \begin{frame}
-    \frametitle{Double cancellation}
+    \frametitle{Simulation 1: Results for single cancelation}
+        \framesubtitle{Person ordering}
 
-    [include figure]
+    \centering \includegraphics[width=0.75\textwidth, clip, trim = 0 4.5in 0 0]{./figs/boxplots_single.pdf}
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Single cancellation -- Person ordering}
+    \frametitle{Simulation 1: Results for single cancelation}
+        \framesubtitle{Item ordering}
+
+    \centering \includegraphics[width=0.75\textwidth, clip, trim = 0 0 0 4.5in]{./figs/boxplots_single.pdf}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Simulation 1: Results for double cancelation}
+
+    \centering \includegraphics[width=0.75\textwidth, clip, trim = 0 0 0 4.5in]{./figs/boxplots.pdf}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Simulation 2: Single cancelation}
+        \framesubtitle{Person ordering}
 
     \centering \includegraphics[width=0.75\textwidth]{./figs/violations_columns_weighted.pdf}
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Single cancellation -- Item ordering}
+    \frametitle{Simulation 2: Single cancelation}
+        \framesubtitle{Item ordering}
 
     \centering \includegraphics[width=0.75\textwidth]{./figs/violations_rows_weighted.pdf}
 
 \end{frame}
 
+\begin{frame}
+    \frametitle{Simulation 2: Double cancelation}
+
+    [include figure]
+
+\end{frame}
 
 \section{Discussion}
 
 \begin{frame}
-    \frametitle{Person monotonicity versus item ordering}
+    \frametitle{Discussion}
 
-    precision / aggregation
+    \begin{outline}
+        \1 Person monotonicity versus item ordering
+            \2 precision / aggregation
+            \2 we don't usually treat persons and items as symmetric, though the models/checks formally do
 
-    how this simulation is different from how we usually treat persons and items
+        \1 Reconsidering double cancelation
+            \2 standard testing data too noisy to check this?
+    \end{outline}
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Reconsidering double cancellation}
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{Further thoughts}
+    \frametitle{Summary}
+    
+    \begin{outline}
+        \1 
+        
+        \1 
+        
+        \1 
+        
+    \end{outline}
 
 \end{frame}
 
@@ -322,9 +385,9 @@
 
     \begin{tabular}{rl}
 
-        xxx@xxx.xxx          & \textsc{Benjamin Domingue} \\
-        dti@berkeley.edu     & \textsc{David Torres Irribarra} \\
-        rdiakow@berkeley.edu & \textsc{Ronli Diakow}
+        ben.domingue@gmail.com & \textsc{Benjamin Domingue} \\
+        dti@berkeley.edu       & \textsc{David Torres Irribarra} \\
+        rdiakow@berkeley.edu   & \textsc{Ronli Diakow}
 
     \end{tabular}
 

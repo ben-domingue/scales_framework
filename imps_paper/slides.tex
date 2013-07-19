@@ -8,7 +8,6 @@
 % \documentclass[11pt]{article}
 % \usepackage{beamerarticle}
 
-%\input{/Users/dti/Dropbox/Library/Latex/bsettings.tex} %David I didn't have access to this file!!!
 \input{bsettings}
 \usepackage{outlines}
 \usepackage{multirow}
@@ -31,13 +30,14 @@
 \begin{document}
 
 \frame{\maketitle}
+%it would be great if someone could make the title page look nice
 
 \section{Two methods}
 \begin{frame}
     \frametitle{Score scales and latent structure}
 
     \begin{outline}
-        \1 We want to adequately characterize psychological and educational variables. 
+        \1 We want to appropriately characterize psychological and educational variables. 
             \2 Are differences between respondents categorical?  ordered?  distances?  
             \2 How can we determine the (``correct'') generating model?  
         
@@ -53,10 +53,7 @@
 \begin{frame}
     \frametitle{A tale of two methods}
 
-    %love the title!  %thanks!
-
     \begin{outline}
-        %\1 There have been a number of theoretical challenges regarding the possibility, in principle, of making this distinctions in psychometric (references).
         \1 Joint work based on two previous lines of research:
         \vspace{0.1cm}
             \2 Torres Irribarra and Diakow -- Can we determine the structure (qualitative, ordinal, interval) of a latent variable by model fit comparisons within a hierarchical model framework that places progressively more stringent monotonicity and scale assumptions on the latent variable?
@@ -74,11 +71,12 @@
     \frametitle{Organizing models by their latent structure}
 
     Two kinds of restrictions that a model places on the latent variable:
-    %(a) monotonicity and (b) scale.
     \begin{description}
-        \item[\textbf{Monotonicity},] which implies that the probability a correct response is a non-decreasing function of increasing proficiency and/or is a non-increasing function of increasing difficulty.
+        \item[\textbf{Monotonicity},] which implies that the probability of a correct response is a non-decreasing function of increasing proficiency and/or is a non-increasing function of increasing difficulty.
         \item[\textbf{Scale},] which implies that the differences between persons (and items) are quantitative (i.e. interval) in nature.  
     \end{description}
+    
+    %aloud: later, see how this [monotonicity] is related to the cancelation axioms
 
 }
 
@@ -125,13 +123,13 @@
 
         \item Located Latent Class Model or Latent Class Rasch Model (\textsc{lcr}):
             \begin{equation*} \label{eqn:LCR}
-                logit [ Pr(x_{ic} = 1 | \theta_c, \delta_i)] = \theta_c - \delta_i
+                \mathrm{logit} [ Pr(x_{ic} = 1 | \theta_c, \delta_i)] = \theta_c - \delta_i
             \end{equation*}
 
         \item Rasch Model (\textsc{rm}):
             \begin{equation*}
                 \label{eqn:RSH}
-                logit [ Pr(x_{ip} = 1 | \theta_p, \delta_i)] = \theta_p - \delta_i
+                \mathrm{logit} [ Pr(x_{ip} = 1 | \theta_p, \delta_i)] = \theta_p - \delta_i
             \end{equation*}
     \end{enumerate}
 
@@ -140,8 +138,6 @@
 
 \begin{frame}
     \frametitle{Additive Conjoint Measurement (\textsc{acm})}
-
-    % From Ben's abstract in Psychometrika:
 
     \begin{outline}
         \1 Axioms of additive conjoint measurement: 
@@ -159,7 +155,7 @@
 \begin{frame} 
     \frametitle{Cancelation axioms}
     
-    Consider a $3 \times 3$ probability matrix formed by the selection of 3 item difficulties and 3 person abilities:
+    Consider a $3 \times 3$ probability matrix formed by the selection of 3 person abilities and 3 item difficulties:
     \[
     \begin{array}{ccc}
       x_{11} & x_{12} & x_{13}  \\
@@ -169,14 +165,14 @@
     \]
     
     \begin{outline}
-        \1 Single cancelation: Rows or columns can be consistently ordered.  
+        \1 Single cancelation: Rows (people) or columns (items) can be consistently ordered.  
             \2 Implies that the major (left-leaning) diagonal is ordered.  
     
         \vspace{0.1cm}
     
         \1 Examples: 
-            \2 Rows: If $x_{11}<x_{21} \text{, then } x_{12}<x_{22} \text{ \& } x_{13}<x_{23}$.
-            \2 Columns: If $x_{11}<x_{12} \text{, then } x_{21}<x_{22} \text{ \& } x_{31}<x_{32}$.
+            \2 Rows/People: If $x_{11}<x_{21} \text{, then } x_{12}<x_{22} \text{ \& } x_{13}<x_{23}$.
+            \2 Columns/Items: If $x_{11}<x_{12} \text{, then } x_{21}<x_{22} \text{ \& } x_{31}<x_{32}$.
     \end{outline}
 
 \end{frame}
@@ -184,7 +180,7 @@
 \begin{frame} 
     \frametitle{Cancelation axioms}
 
-    Consider a $3 \times 3$ probability matrix formed by the selection of 3 item difficulties and 3 person abilities:
+    Consider a $3 \times 3$ probability matrix formed by the selection of 3 person abilities and 3 item difficulties:
     \[
     \begin{array}{ccc}
       \cdot&x_{12} &x_{13}  \\
@@ -226,7 +222,7 @@
 
 \begin{frame}
 
-    \frametitle{The Framework and the Axioms}
+    \frametitle{The framework and the axioms}
 
         %temporal until I prepare the new figure
         \centering \includegraphics[width=0.75\textwidth]{./figs/Structure3.pdf} \\
@@ -239,29 +235,41 @@
 \begin{frame}
     \frametitle{Hypotheses}
     
-    \parskip 12pt
-
-    The expected order for the number of violations of the cancelation axioms is  
-    \textsc{un} > ( \textsc{mon} $\sim$ \textsc{iio} ) > \textsc{dm} > ( \textsc{lcr} $\sim$ \textsc{rm} )
+    %first just show table, then add sentences
+    
+    %\parskip 12pt
 
     \begin{center}
     \begin{tabular}{lccc}
     \toprule
-     \multirow{3}{*}{Model} & \multicolumn{3}{c}{Violates cancelation axiom} \\ \cmidrule(lr){2-4}
+     \multirow{3}{*}{Model} & \multicolumn{3}{c}{Satisfies cancelation axiom} \\ \cmidrule(lr){2-4}
                 & \multicolumn{2}{c}{Single} & \multirow{2}{*}{Double} \\ \cmidrule(lr){2-3}
                   & Rows       & Columns    &            \\
     \midrule
-     \textsc{un}  & \checkmark & \checkmark & \checkmark \\
-     \textsc{mon} &            & \checkmark & \checkmark \\
-     \textsc{iio} & \checkmark &            & \checkmark \\
-     \textsc{dm}  &            &            & \checkmark \\
-     \textsc{lcr} &            &            &            \\
-     \textsc{rm}  &            &            &            \\
+     \textsc{un}  &            &            &            \\
+     \textsc{mon} & \checkmark &            &            \\
+     \textsc{iio} &            & \checkmark &            \\
+     \textsc{dm}  & \checkmark & \checkmark &            \\
+     \textsc{lcr} & \checkmark & \checkmark & \checkmark \\
+     \textsc{rm}  & \checkmark & \checkmark & \checkmark \\
     \bottomrule
     \end{tabular}
     \end{center}
 
-    If these hypotheses hold, then we potentially have a fairly straightforward criteria to recover the generating latent structure.
+    \uncover<2->{
+    Expected order for number of violations of cancelation axioms: 
+    \vspace{-0.2cm}
+    \begin{center}
+    \textsc{un} > ( \textsc{mon} $\stackrel{?}{\sim}$ \textsc{iio} ) > \textsc{dm} > ( \textsc{lcr} $\stackrel{?}{\sim}$ \textsc{rm} )
+    \end{center}
+    }
+
+    \uncover<3->{
+    This should lead to fairly straightforward criteria to recover the generating latent structure.  
+    }
+    \uncover<4>{\alert{However...}}
+    
+    %aloud: thought this would be straightforward, but ran into deeper issues: sensitivity to ``mesh''; number of different variables that we are trying to disentangle.  
 
 \end{frame}
 
@@ -271,7 +279,7 @@
         \begin{outline}
         \1 Generate data under each of six models 
         \renewcommand{\outlineii}{enumerate}
-            \2 Use original data from Diakow and Torres Irribarra
+            \2 Use original data from Torres Irribarra and Diakow
                 \3 5000 people in 2-6 classes
                 \3 10 items
                 \3 30 replications per model
@@ -319,6 +327,27 @@
 
 \end{frame}
 
+\begin{frame}
+    \frametitle{Simulation 1: Results summary}
+    
+    \begin{center}
+    \begin{tabular}{lccc}
+    \toprule
+     \multirow{3}{*}{Model} & \multicolumn{3}{c}{Average percentage of violations} \\ \cmidrule(lr){2-4}
+                & \multicolumn{2}{c}{Single} & \multirow{2}{*}{Double} \\ \cmidrule(lr){2-3}
+                  & Rows       & Columns    &            \\
+    \midrule
+     \textsc{un}  & 0.XX & 0.XX & 0.XX \\
+     \textsc{mon} & 0.XX & 0.XX & 0.XX \\
+     \textsc{iio} & 0.XX & 0.XX & 0.XX \\
+     \textsc{dm}  & 0.XX & 0.XX & 0.XX \\
+     \textsc{lcr} & 0.XX & 0.XX & 0.XX \\
+     \textsc{rm}  & 0.XX & 0.XX & 0.XX \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+    
+\end{frame}
 
 \begin{frame}
     \frametitle{Simulation 2: Single cancelation}
@@ -343,6 +372,28 @@
 
 \end{frame}
 
+\begin{frame}
+    \frametitle{Simulation 2: Results summary}
+
+    \begin{center}
+    \begin{tabular}{lccc}
+    \toprule
+     \multirow{3}{*}{Model} & \multicolumn{3}{c}{Average percentage of violations} \\ \cmidrule(lr){2-4}
+                & \multicolumn{2}{c}{Single} & \multirow{2}{*}{Double} \\ \cmidrule(lr){2-3}
+                  & Rows       & Columns    &            \\
+    \midrule
+     \textsc{un}  & 0.XX & 0.XX & 0.XX \\
+     \textsc{mon} & 0.XX & 0.XX & 0.XX \\
+     \textsc{iio} & 0.XX & 0.XX & 0.XX \\
+     \textsc{dm}  & 0.XX & 0.XX & 0.XX \\
+     \textsc{lcr} & 0.XX & 0.XX & 0.XX \\
+     \textsc{rm}  & 0.XX & 0.XX & 0.XX \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+
+\end{frame}
+
 \section{Discussion}
 
 \begin{frame}
@@ -350,25 +401,30 @@
 
     \begin{outline}
         \1 Person monotonicity versus item ordering
-            \2 precision / aggregation
-            \2 we don't usually treat persons and items as symmetric, though the models/checks formally do
+            \2 Precision and/or aggregation 
+            \2 Formally, people and items are symmetric; in the real world, we rarely treat them symmetrically.  
+
+        \vspace{0.25cm}
 
         \1 Reconsidering double cancelation
-            \2 standard testing data too noisy to check this?
+            \2 Checking for double cancelation did not add stringency
+            \2 Observed data is very noisy relative to differences in true probabilities
+            \2 Casts doubt on the utility of this method for checking double cancelation
+
     \end{outline}
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Summary}
+    \frametitle{Next steps}
     
     \begin{outline}
-        \1 
+        \1 Can we manipulate data generation such that we can accurately predict changes in the proportion of violations?
         
-        \1 
+        \vspace{0.25cm}
         
-        \1 
-        
+        \1 Are the double cancelation results idiosyncratic, or do they apply more generally?  
+       
     \end{outline}
 
 \end{frame}
@@ -385,9 +441,9 @@
 
     \begin{tabular}{rl}
 
-        xxx@xxx.xxx          & \textsc{Benjamin Domingue} \\
-        dti@berkeley.edu     & \textsc{David Torres Irribarra} \\
-        rdiakow@berkeley.edu & \textsc{Ronli Diakow}
+        ben.domingue@gmail.com & \textsc{Benjamin Domingue} \\
+        dti@berkeley.edu       & \textsc{David Torres Irribarra} \\
+        rdiakow@berkeley.edu   & \textsc{Ronli Diakow}
 
     \end{tabular}
 

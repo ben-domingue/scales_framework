@@ -2,5 +2,5 @@
 \select@language {english}
 \beamer@sectionintoc {1}{Two methods}{2}{0}{1}
 \beamer@sectionintoc {2}{Study design}{13}{0}{2}
-\beamer@sectionintoc {3}{Results}{15}{0}{3}
-\beamer@sectionintoc {4}{Discussion}{21}{0}{4}
+\beamer@sectionintoc {3}{Results}{18}{0}{3}
+\beamer@sectionintoc {4}{Discussion}{26}{0}{4}
