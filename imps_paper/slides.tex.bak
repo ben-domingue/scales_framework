@@ -18,7 +18,7 @@
 
 \subject{Tenable Assessment}
 
-\date{July 2013}
+\date{International Meeting of the Psychometric Society \\ July 25, 2013}
 
 \institute[University of California, Berkeley]{
   \inst{1} University of Colorado at Boulder \and
@@ -33,60 +33,193 @@
 \begin{frame}
     \frametitle{Score scales and latent structure}
 
+    \begin{outline}
+        \1 We want to adequately characterize psychological and educational variables. 
+            \2 Are differences between respondents categorical?  ordered?  distances?  
+            \2 How can we determine the (``correct'') generating model?  
+            
+        
+        \1 This issue has both theoretical and practical importance.  
+            \2 Foundation of many debates in policy and substantive research
+            \2 Any decision matters for subsequent inferences
+    \end{outline}
+    
 \end{frame}
 
 \begin{frame}
     \frametitle{A tale of two methods}
-    
-    Torres Irribarra and Diakow -- framework / hierarchy of latent variable models according to latent structure / implied/supportable scale (qualitative, ordinal, interval), check using standard model fit indices
-    
-    Domingue -- whether data consistent with the Rasch model possessed sufficient structure, according to the axioms of Additive Conjoint Measurement (ACM; Luce \& Tukey, 1964), to support a score scale with interval properties
+
+    %love the title!  %thanks!
+
+    \begin{outline}
+        %\1 There have been a number of theoretical challenges regarding the possibility, in principle, of making this distinctions in psychometric (references).
+        \1 Joint work based on two previous lines of research:
+            \2 Torres Irribarra and Diakow -- Can we determine the structure (qualitative, ordinal, interval) of a latent variable by model fit comparisons within a hierarchical model framework that places progressively more stringent monotonicity and scale assumptions on the latent variable?
+            \2 Domingue -- Do data possess sufficient structure, as judged by the axioms of conjoint measurement, to yield interval scales?
+    \end{outline}
 
 \end{frame}
 
-\begin{frame}
+%monotonicity and scale
+\frame{
+
+    \frametitle{Organizing models by their latent structure}
+
+    Two kinds of restrictions that a model places on the latent variable:
+    %(a) monotonicity and (b) scale.
+    \begin{description}
+        \item[\textbf{Monotonicity},] which implies that the probability a correct response is a non-decreasing function of increasing proficiency and/or is a non-increasing function of increasing difficulty.
+        \item[\textbf{Scale},] which implies that the differences between persons (and items) are quantitative (i.e. interval) in nature.  
+    \end{description}
+
+}
+
+
+\frame{
+
     \frametitle{A hierarchy of latent variable models}
 
-    [equations]
+        \centering \includegraphics[width=0.75\textwidth]{./figs/Structure3.pdf} 
 
-    [figures]
+}
+
+
+%models and equations
+\frame[allowframebreaks]{
+
+    \frametitle{Six latent variable models}
+
+    \begin{enumerate}
+    \parskip 9pt
+        \item Unconstrained Latent Class Model (\textsc{un}):
+            \begin{equation*} \label{eqn:lcabeta}
+                \mathrm{logit} [ Pr(x_{ic} = 1 | c)] = \mathrm{logit} [\pi_{i|c}] = \beta_{ic}
+            \end{equation*}
+
+        \item Ordered Latent Class Model with Class Monotonicty (\textsc{mon}):
+            \begin{eqnarray*} \label{eqn:monbeta}
+               \mathrm{logit} [ Pr(x_{ic} = 1 | c)] = \mathrm{logit} [\pi_{i|c}] = \beta_{ic}, \\
+               \beta_{ic} \leq \beta_{ic'} \mbox{ for all $c < c'$ and for all $i$} \nonumber
+            \end{eqnarray*}
+
+        \item Ordered Latent Class Model with Invariant Item Ordering (\textsc{iio}):
+            \begin{eqnarray*} \label{eqn:iiobeta}
+               \mathrm{logit} [ Pr(x_{ic} = 1 | c)] = \mathrm{logit} [\pi_{i|c}] = \beta_{ic}, \\
+               \beta_{ic} \leq \beta_{i'c} \mbox{ for all $i < i'$ and for all $c$} \nonumber
+            \end{eqnarray*}
+
+        \item Ordered Latent Class Model with Double Monotonicity (\textsc{dm}):
+            \begin{eqnarray*} \label{eqn:dmbeta}
+               \mathrm{logit} [ Pr(x_{ic} = 1 | c)] = \mathrm{logit} [\pi_{i|c}] = \beta_{ic}, \\
+               \beta_{ic} \leq \beta_{ic'} \mbox{ for all $c < c'$ and for all $i$} \nonumber, \\
+               \beta_{ic} \leq \beta_{i'c} \mbox{ for all $i < i'$ and for all $c$} \nonumber
+            \end{eqnarray*}
+
+        \item Located Latent Class Model or Latent Class Rasch Model (\textsc{lcr}):
+            \begin{equation*} \label{eqn:LCR}
+                logit [ Pr(x_{ic} = 1 | \theta_c, \delta_i)] = \theta_c - \delta_i
+            \end{equation*}
+
+        \item Rasch Model (\textsc{rsh}):
+            \begin{equation*}
+                \label{eqn:RSH}
+                logit [ Pr(x_{ip} = 1 | \theta_p, \delta_i)] = \theta_p - \delta_i
+            \end{equation*}
+    \end{enumerate}
+
+}
+
+
+\begin{frame}
+    \frametitle{Additive Conjoint Measurement (\textsc{acm})}
+
+    % From Ben's abstract in Psychometrika:
+
+    \begin{outline}
+        \1 Axioms of additive conjoint measurement: 
+            \2 Describe conditions that need to be satisfied for an interval scale to exist for an attribute
+            \2 Provide a means of testing the hypothesis that data is consistent with an interval scale  
+            \2 Are difficult to verify given (likely) measurement error  
+            
+        \vspace{0.25cm}
+        
+        \1 Focus on the cancelation axioms
+    \end{outline}
 
 \end{frame}
 
-\begin{frame}
-    \frametitle{Additive conjoint measurement (\textsc{acm})}
-
-    \textsc{acm} is [unclear to me] 
-
-    axioms: cancellation, solvability, archimedes
+\begin{frame} 
+    \frametitle{Cancelation axioms}
+    
+    Consider a $3 \times 3$ probability matrix formed by the selection of 3 item difficulties and 3 person abilities:
+    \[
+    \begin{array}{ccc}
+      x_{11} & x_{12} & x_{13}  \\
+      x_{21} & x_{22} & x_{23} \\
+      x_{31} & x_{32} & x_{33} \\
+    \end{array}
+    \]
+    
+    \begin{outline}
+        \1 Single cancelation: Rows or columns can be consistently ordered.  
+            \2 Implies that the major (left-leaning) diagonal is ordered.  
+    
+        \vspace{0.1cm}
+    
+        \1 Examples: 
+            \2 Rows: If $x_{11}<x_{21} \text{, then } x_{12}<x_{22} \text{ \& } x_{13}<x_{23}$.
+            \2 Columns: If $x_{11}<x_{12} \text{, then } x_{21}<x_{22} \text{ \& } x_{31}<x_{32}$.
+    \end{outline}
 
 \end{frame}
 
-\begin{frame}
-    \frametitle{Cancellation axioms}
-    
-    [set of matrices used to explain]
-    
+\begin{frame} 
+    \frametitle{Cancelation axioms}
+
+    Consider a $3 \times 3$ probability matrix formed by the selection of 3 item difficulties and 3 person abilities:
+    \[
+    \begin{array}{ccc}
+      \cdot&x_{12} &x_{13}  \\
+      x_{21}&\cdot&x_{23} \\
+      x_{31} & x_{32}&\cdot\\
+    \end{array}
+    \]
+
+    \begin{outline}
+        \1 Double cancelation: Additive constraints 
+            \2 Imposes some order on the (very messy) minor (right-leaning) diagonal.  
+        
+        \vspace{0.1cm}
+            
+        \1 Two forms:
+            \2 If $x_{21}<x_{12} \text{ \& } x_{32}<x_{23} \text{ then } x_{31}<x_{13}$.
+            \2 If $x_{21}>x_{12} \text{ \& } x_{32}>x_{23} \text{ then } x_{31}>x_{13}$.
+
+    \end{outline}
+
 \end{frame}
 
 \begin{frame}
     \frametitle{Applying the axioms of \textsc{acm}}
 
-    Domingue method to check cancellation axioms -- estimate credible intervals with relevant cancellation constraints and check if observed data within interval
-    
-    Previously applied to Rasch model
+    \begin{outline}
+        \1 Domingue expanded and improved a Bayesian method for checking the single and double cancelation constraints
+            \2 Accounts for measurement error in the observed proportions
+        
+        \1 The method implemented in the R package ConjointChecks: 
+            \2 Estimate the posterior for the probability of a correct response within each cell using relevant cancelation constraints to form the jumping distribution
+            \2 Check if the observed proportions correct fit within the estimated 95\% credible interval
+
+    \end{outline}
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{}
 
-    [new figure showing relationship of hierarchy to axioms]
+    \frametitle{The Framework and the Axioms}
 
-\end{frame}
-
-\begin{frame}
-    \frametitle{}
+        %temporal until I prepare the new figure
+        \centering \includegraphics[width=0.75\textwidth]{./figs/Structure3.pdf} \\
 
 \end{frame}
 
@@ -94,16 +227,20 @@
 \section{Study design}
 
 \begin{frame}
-    \frametitle{Hypotheses}
-    
+    \frametitle{Hypotheses/Questions }
+
     \begin{enumerate}
-    \item \textsc{un} model -- most violations
-    \item symmetry between \textsc{mon} and \textsc{iio} models
-    \item order: \textsc{mon} / \textsc{iio}, \textsc{dm}, \textsc{lcr} / \textsc{rm}
+    \item Data generated under an \textsc{un} model should yield the most violations.
+    \item The ammount of single cancelation violations under the \textsc{mon} and \textsc{iio} models should be similar.
+    \item The \textsc{dm} model should comply with both single cancelations, but not with double cancelation.
+    \item The \textsc{lcr} and \textsc{rm} should have the smalles number of violations.
+    \item In summ, the expected order is:
+        \begin{itemize}
+            \item \textsc{un} > ( \textsc{mon} $\sim$ \textsc{iio} ) > \textsc{dm} > ( \textsc{lcr} $\sim$ \textsc{rm} )
+        \end{itemize}
     \end{enumerate}
-    
-    
-    If hold, straightforward criteria to distinguish latent structure 
+
+    If these hypotheses hold, then we potentially have a fairly straightforward criteria to recover the generating latent structure.
 
 \end{frame}
 
@@ -111,9 +248,9 @@
     \frametitle{Simulation design}
 
     generate data under each of six models
-    
+
     1000 people in 6 latent classes and 50 items in 6 latent groups
-    
+
     50 replications for each model
 
 \end{frame}
@@ -122,7 +259,7 @@
     \frametitle{Analysis}
 
     ConjointChecks, each single cancellation and double cancellation
-    
+
     \% weighted violations
 
 \end{frame}
@@ -140,14 +277,14 @@
 \begin{frame}
     \frametitle{Single cancellation -- Person ordering}
 
-    \centering \includegraphics[width=1\textwidth]{./figs/violations_columns_weighted.pdf}
+    \centering \includegraphics[width=0.75\textwidth]{./figs/violations_columns_weighted.pdf}
 
 \end{frame}
 
 \begin{frame}
     \frametitle{Single cancellation -- Item ordering}
 
-    \centering \includegraphics[width=1\textwidth]{./figs/violations_rows_weighted.pdf}
+    \centering \includegraphics[width=0.75\textwidth]{./figs/violations_rows_weighted.pdf}
 
 \end{frame}
 
@@ -158,7 +295,7 @@
     \frametitle{Person monotonicity versus item ordering}
 
     precision / aggregation
-    
+
     how this simulation is different from how we usually treat persons and items
 
 \end{frame}
@@ -185,12 +322,12 @@
 
     \begin{tabular}{rl}
 
-    	xxx@xxx.xxx          & \textsc{Benjamin Domingue} \\
+        xxx@xxx.xxx          & \textsc{Benjamin Domingue} \\
         dti@berkeley.edu     & \textsc{David Torres Irribarra} \\
-    	rdiakow@berkeley.edu & \textsc{Ronli Diakow}
-    	
+        rdiakow@berkeley.edu & \textsc{Ronli Diakow}
+
     \end{tabular}
-	
+
     \end{center}
 
     \vspace{10mm}
@@ -228,4 +365,4 @@
 \begin{frame}
     \frametitle{}
 
-\end{frame}
+\end{frame} 
