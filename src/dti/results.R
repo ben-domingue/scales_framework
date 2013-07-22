@@ -1,7 +1,7 @@
 ##set working directory
 ##change for each person!
 setwd("C:/Users/Ronli/Documents/GitHub/scales_framework/src/dti")
-setwd("/Users/dti/Dropbox/Research/simdata3")
+setwd("/Users/dti/Dropbox/Research/simdata3/simdata3")
 ##read in simulation results
 load("scale_cols.Rdata")  #obj called out_cols
 load("scale_rows.Rdata")  #obj called out_rows
@@ -24,7 +24,7 @@ violations.rows <- data.frame(model = ordered(rep(c("UNC","MON","IIO","DM","LCR"
 library(psych)
 describeBy(violations.cols, violations.cols$model)
 
-
+pdf.options(family = 'Palatino')
 ##plot results
 
 boxplot(weigh ~ model, violations.cols, at =rev(1:nlevels(violations.cols$model)), ylim = c(0,0.4), horizontal = TRUE, boxwex = .5, las = 1, xlab = "Percentage of Violations", col = "grey70")

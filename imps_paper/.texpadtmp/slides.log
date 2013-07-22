@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.1.23)  22 JUL 2013 03:06
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.1.23)  22 JUL 2013 12:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1155,7 +1155,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 File: ./figs/TA_ACM.pdf Graphic file (type pdf)
 
 <use ./figs/TA_ACM.pdf>
-Package pdftex.def Info: ./figs/TA_ACM.pdf used on input line 230.
+Package pdftex.def Info: ./figs/TA_ACM.pdf used on input line 229.
 (pdftex.def)             Requested size: 230.46739pt x 187.60742pt.
  [12
 
@@ -1170,74 +1170,61 @@ Package pdftex.def Info: ./figs/TA_ACM.pdf used on input line 230.
 ] [17
 
 ]
-<./figs/boxplots_single.pdf, id=267, 433.62pt x 650.43pt>
-File: ./figs/boxplots_single.pdf Graphic file (type pdf)
+<./figs/sc_cols.pdf, id=267, 505.89pt x 505.89pt>
+File: ./figs/sc_cols.pdf Graphic file (type pdf)
+ <use ./figs/sc_cols.pdf>
+Package pdftex.def Info: ./figs/sc_cols.pdf used on input line 312.
+(pdftex.def)             Requested size: 184.3758pt x 184.37427pt.
 
-<use ./figs/boxplots_single.pdf>
-Package pdftex.def Info: ./figs/boxplots_single.pdf used on input line 313.
-(pdftex.def)             Requested size: 230.46739pt x 172.84944pt.
- [18
+[18
 
- <./figs/boxplots_single.pdf>]
-File: ./figs/boxplots_single.pdf Graphic file (type pdf)
+ <./figs/sc_cols.pdf>] <./figs/sc_rows.pdf, id=284, 505.89pt x 505.89pt>
+File: ./figs/sc_rows.pdf Graphic file (type pdf)
 
-<use ./figs/boxplots_single.pdf>
-Package pdftex.def Info: ./figs/boxplots_single.pdf used on input line 321.
-(pdftex.def)             Requested size: 230.46739pt x 172.84944pt.
+<use ./figs/sc_rows.pdf>
+Package pdftex.def Info: ./figs/sc_rows.pdf used on input line 320.
+(pdftex.def)             Requested size: 184.3758pt x 184.37427pt.
  [19
 
+ <./figs/sc_rows.pdf>]
+<./figs/sc+dc.pdf, id=301, 505.89pt x 505.89pt>
+File: ./figs/sc+dc.pdf Graphic file (type pdf)
+ <use ./figs/sc+dc.pdf>
+Package pdftex.def Info: ./figs/sc+dc.pdf used on input line 327.
+(pdftex.def)             Requested size: 184.3758pt x 184.37427pt.
+ [20
+
+ <./figs/sc+dc.pdf>] [21
+
 ]
-<./figs/boxplots.pdf, id=297, 433.62pt x 650.43pt>
-File: ./figs/boxplots.pdf Graphic file (type pdf)
- <use ./figs/boxplots.pdf>
-Package pdftex.def Info: ./figs/boxplots.pdf used on input line 328.
-(pdftex.def)             Requested size: 230.46739pt x 172.84944pt.
-
-[20
-
- <./figs/boxplots.pdf>] [21
-
-]
-<./figs/violations_columns_weighted.pdf, id=324, 505.89pt x 505.89pt>
+<./figs/violations_columns_weighted.pdf, id=327, 505.89pt x 505.89pt>
 File: ./figs/violations_columns_weighted.pdf Graphic file (type pdf)
 
 <use ./figs/violations_columns_weighted.pdf>
 Package pdftex.def Info: ./figs/violations_columns_weighted.pdf used on input l
 ine 359.
-(pdftex.def)             Requested size: 230.46739pt x 230.47363pt.
+(pdftex.def)             Requested size: 184.3758pt x 184.37427pt.
+ [22
 
-Overfull \vbox (11.66133pt too high) detected at line 359
- []
-
-[22
-
- <./figs/violations_columns_weighted.pdf>]
-<./figs/violations_rows_weighted.pdf, id=340, 505.89pt x 505.89pt>
+ <./figs/violations_columns_weighted.pdf>] <./figs/violations_rows_weighted.pdf
+, id=344, 505.89pt x 505.89pt>
 File: ./figs/violations_rows_weighted.pdf Graphic file (type pdf)
 
 <use ./figs/violations_rows_weighted.pdf>
 Package pdftex.def Info: ./figs/violations_rows_weighted.pdf used on input line
  367.
-(pdftex.def)             Requested size: 230.46739pt x 230.47363pt.
+(pdftex.def)             Requested size: 184.3758pt x 184.37427pt.
+ [23
 
-Overfull \vbox (11.66133pt too high) detected at line 367
- []
-
-[23
-
- <./figs/violations_rows_weighted.pdf>]
-<./figs/violations_dc_weighted.pdf, id=356, 505.89pt x 505.89pt>
+ <./figs/violations_rows_weighted.pdf>] <./figs/violations_dc_weighted.pdf, id=
+361, 505.89pt x 505.89pt>
 File: ./figs/violations_dc_weighted.pdf Graphic file (type pdf)
 
 <use ./figs/violations_dc_weighted.pdf>
 Package pdftex.def Info: ./figs/violations_dc_weighted.pdf used on input line 3
 74.
-(pdftex.def)             Requested size: 230.46739pt x 230.47363pt.
-
-Overfull \vbox (1.16135pt too high) detected at line 374
- []
-
-[24
+(pdftex.def)             Requested size: 184.3758pt x 184.37427pt.
+ [24
 
  <./figs/violations_dc_weighted.pdf>] [25
 
@@ -1273,10 +1260,10 @@ Package rerunfilecheck Info: File `slides.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 484.
  ) 
 Here is how much of TeX's memory you used:
- 18356 strings out of 493488
- 338344 string characters out of 3141326
- 414824 words of memory out of 3000000
- 21083 multiletter control sequences out of 15000+200000
+ 18361 strings out of 493488
+ 338391 string characters out of 3141326
+ 414825 words of memory out of 3000000
+ 21087 multiletter control sequences out of 15000+200000
  69640 words of font info for 132 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,15n,58p,395b,596s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1291,10 +1278,10 @@ texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2012/texmf-d
 ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2012/texmf-dist/fon
 ts/type1/urw/palatino/uplri8a.pfb>
 Output written on /Users/dti/Dropbox/Research/TACM/imps_paper/.texpadtmp/slides
-.pdf (29 pages, 245512 bytes).
+.pdf (29 pages, 248307 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 378 compressed objects within 4 object streams
+ 468 PDF objects out of 1000 (max. 8388607)
+ 385 compressed objects within 4 object streams
  70 named destinations out of 1000 (max. 500000)
- 142 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

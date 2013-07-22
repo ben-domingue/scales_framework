@@ -20,11 +20,12 @@ for (fn in lf) {
 }
 
 
+
 violations.dc <- data.frame(model = ordered(rep(c("UNC","MON","IIO","DM","LCR","RSH"), each = 50), levels = c("UNC","MON","IIO","DM","LCR","RSH")), 
                               unwei = sapply(out, function(x) x@means$unweighted), 
                               weigh = sapply(out, function(x) x@means$weighted))
 
-
+pdf.options(family = 'Palatino')
 
 boxplot(weigh ~ model, violations.dc, at =rev(1:nlevels(violations.dc$model)), ylim = c(0,0.8), horizontal = TRUE)
 dev.print(device = pdf, file = 'violations_dc_weighted.pdf')
