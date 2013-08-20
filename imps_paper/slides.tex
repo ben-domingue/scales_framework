@@ -23,7 +23,7 @@
 \date{International Meeting of the Psychometric Society \\ July 25, 2013}
 
 \institute[]{
-  \inst{1} New York University \and 
+  \inst{1} New York University \and
   \inst{2} University of Colorado at Boulder \and
   \inst{3} University of California, Berkeley}
 
@@ -37,17 +37,17 @@
     \frametitle{Score scales and latent structure}
 
     \begin{outline}
-        \1 We want to appropriately characterize psychological and educational variables. 
-            \2 Are differences between respondents categorical?  ordered?  distances?  
-            \2 How can we determine the (``correct'') generating model?  
-        
-        \vspace{0.25cm}    
-        
-        \1 This issue has both theoretical and practical importance.  
+        \1 We want to appropriately characterize psychological and educational variables.
+            \2 Are differences between respondents categorical?  ordered?  distances?
+            \2 How can we determine the (``correct'') generating model?
+
+        \vspace{0.25cm}
+
+        \1 This issue has both theoretical and practical importance.
             \2 Foundation of many debates in policy and substantive research
             \2 Any decision matters for subsequent inferences
     \end{outline}
-    
+
 \end{frame}
 
 \begin{frame}
@@ -57,9 +57,9 @@
         \1 Joint work based on two previous lines of research:
         \vspace{0.1cm}
             \2 Torres Irribarra and Diakow -- Can we determine the structure (qualitative, ordinal, interval) of a latent variable by model fit comparisons within a hierarchical model framework that places progressively more stringent monotonicity and scale assumptions on the latent variable?
-            
+
             \vspace{0.25cm}
-            
+
             \2 Domingue -- Do data possess sufficient structure, as judged by the axioms of conjoint measurement, to yield interval scales?
     \end{outline}
 
@@ -73,9 +73,9 @@
     Two kinds of restrictions that a model places on the latent variable:
     \begin{description}
         \item[\textbf{Monotonicity},] which implies that the probability of a correct response is a non-decreasing function of increasing proficiency and/or is a non-increasing function of increasing difficulty.
-        \item[\textbf{Scale},] which implies that the differences between persons (and items) are quantitative (i.e. interval) in nature.  
+        \item[\textbf{Scale},] which implies that the differences between persons (and items) are quantitative (i.e. interval) in nature.
     \end{description}
-    
+
     %aloud: later, see how this [monotonicity] is related to the cancelation axioms
 
 }
@@ -85,7 +85,7 @@
 
     \frametitle{A hierarchy of latent variable models}
 
-        \centering \includegraphics[width=0.75\textwidth]{./figs/Structure3.pdf} 
+        \centering \includegraphics[width=0.75\textwidth]{./figs/Structure3.pdf}
 
 }
 
@@ -140,21 +140,21 @@
     \frametitle{Additive Conjoint Measurement (\textsc{acm})}
 
     \begin{outline}
-        \1 Axioms of additive conjoint measurement: 
+        \1 Axioms of additive conjoint measurement:
             \2 Describe conditions that need to be satisfied for an interval scale to exist for an attribute
-            \2 Provide a means of testing the hypothesis that data is consistent with an interval scale  
-            \2 Are difficult to verify given (likely) measurement error  
-            
+            \2 Provide a means of testing the hypothesis that data is consistent with an interval scale
+            \2 Are difficult to verify given (likely) measurement error
+
         \vspace{0.25cm}
-        
+
         \1 Focus on the cancelation axioms
     \end{outline}
 
 \end{frame}
 
-\begin{frame} 
+\begin{frame}
     \frametitle{Cancelation axioms}
-    
+
     Consider a $3 \times 3$ probability matrix formed by the selection of 3 person abilities and 3 item difficulties:
     \[
     \begin{array}{ccc}
@@ -163,21 +163,21 @@
       x_{31} & x_{32} & x_{33} \\
     \end{array}
     \]
-    
+
     \begin{outline}
-        \1 Single cancelation: Rows (people) or columns (items) can be consistently ordered.  
-            \2 Implies that the major (left-leaning) diagonal is ordered.  
-    
+        \1 Single cancelation: Rows (people) or columns (items) can be consistently ordered.
+            \2 Implies that the major (left-leaning) diagonal is ordered.
+
         \vspace{0.1cm}
-    
-        \1 Examples: 
+
+        \1 Examples:
             \2 Rows/People: If $x_{11}<x_{21} \text{, then } x_{12}<x_{22} \text{ \& } x_{13}<x_{23}$.
             \2 Columns/Items: If $x_{11}<x_{12} \text{, then } x_{21}<x_{22} \text{ \& } x_{31}<x_{32}$.
     \end{outline}
 
 \end{frame}
 
-\begin{frame} 
+\begin{frame}
     \frametitle{Cancelation axioms}
 
     Consider a $3 \times 3$ probability matrix formed by the selection of 3 person abilities and 3 item difficulties:
@@ -190,11 +190,11 @@
     \]
 
     \begin{outline}
-        \1 Double cancelation: Additive constraints 
-            \2 Imposes some order on the (very messy) minor (right-leaning) diagonal.  
-        
+        \1 Double cancelation: Additive constraints
+            \2 Imposes some order on the (very messy) minor (right-leaning) diagonal.
+
         \vspace{0.1cm}
-            
+
         \1 Two forms:
             \2 If $x_{21}<x_{12} \text{ \& } x_{32}<x_{23} \text{ then } x_{31}<x_{13}$.
             \2 If $x_{21}>x_{12} \text{ \& } x_{32}>x_{23} \text{ then } x_{31}>x_{13}$.
@@ -211,8 +211,8 @@
             \2 Accounts for measurement error in the observed proportions
 
         \vspace{0.25cm}
-        
-        \1 The method implemented in the R package ConjointChecks: 
+
+        \1 The method implemented in the R package ConjointChecks:
             \2 Estimate the posterior for the probability of a correct response within each cell using relevant cancelation constraints to form the jumping distribution
             \2 Check if the observed proportions correct fit within the estimated 95\% credible interval
 
@@ -233,9 +233,9 @@
 
 \begin{frame}
     \frametitle{Hypotheses}
-    
+
     %first just show table, then add sentences
-    
+
     %\parskip 12pt
 
     \begin{center}
@@ -256,7 +256,7 @@
     \end{center}
 
     \uncover<2->{
-    Expected order for number of violations of cancelation axioms: 
+    Expected order for number of violations of cancelation axioms:
     \vspace{-0.2cm}
     \begin{center}
     \textsc{un} > ( \textsc{mon} $\stackrel{?}{\sim}$ \textsc{iio} ) > \textsc{dm} > ( \textsc{lcr} $\stackrel{?}{\sim}$ \textsc{rm} )
@@ -264,11 +264,11 @@
     }
 
     \uncover<3->{
-    This should lead to fairly straightforward criteria to recover the generating latent structure.  
+    This should lead to fairly straightforward criteria to recover the generating latent structure.
     }
     \uncover<4>{\alert{However...}}
-    
-    %aloud: thought this would be straightforward, but ran into deeper issues: sensitivity to ``mesh''; number of different variables that we are trying to disentangle.  
+
+    %aloud: thought this would be straightforward, but ran into deeper issues: sensitivity to ``mesh''; number of different variables that we are trying to disentangle.
 
 \end{frame}
 
@@ -276,22 +276,22 @@
     \frametitle{Simulation design and analysis}
 
         \begin{outline}
-        \1 Generate data under each of six models 
+        \1 Generate data under each of six models
         \renewcommand{\outlineii}{enumerate}
             \2 Use original data from Torres Irribarra and Diakow
                 \3 5000 people in 2-6 classes
                 \3 10 items
                 \3 30 replications per model
-            \2 Simulate new data 
+            \2 Simulate new data
                 \3 1000 people in 6 classes
                 \3 50 items in 6 groups
                 \3 50 replications per model
-        
+
         \vspace{0.25cm}
-        
+
         \1 Check for violations of the cancelation axioms using ConjointChecks
         \renewcommand{\outlineii}{itemize}
-            \2 Double cancelation and each single cancelation separately
+            \2 Double cancelation and each single cancelation
 
         \vspace{0.25cm}
 
@@ -328,7 +328,7 @@
 
 \begin{frame}
     \frametitle{Simulation 1: Results summary}
-    
+
     \begin{center}
     \begin{tabular}{lccc}
     \toprule
@@ -336,12 +336,12 @@
                 & \multicolumn{2}{c}{Single} & \multirow{2}{*}{Double} \\ \cmidrule(lr){2-3}
                   & Rows       & Columns    &            \\
     \midrule
-     \textsc{un}  & 0.41 & 0.16 & 0.51 \\
-     \textsc{mon} & 0.36 & 0.10 & 0.10 \\
-     \textsc{iio} & 0.06 & 0.08 & 0.16 \\
-     \textsc{dm}  & 0.11 & 0.08 & 0.23 \\
-     \textsc{lcr} & 0.08 & 0.07 & 0.18 \\
-     \textsc{rm}  & 0.09 & 0.06 & 0.20 \\
+     \textsc{un}  & 0.16 & 0.41 & 0.51 \\
+     \textsc{mon} & \color{gray}{0.10} & 0.36 & 0.45 \\
+     \textsc{iio} & 0.08 & \color{gray}{0.06} & 0.16 \\
+     \textsc{dm}  & \color{gray}{0.08} & \color{gray}{0.11} & 0.23 \\
+     \textsc{lcr} & \color{gray}{0.07} & \color{gray}{0.08} & \color{gray}{0.18} \\
+     \textsc{rm}  & \color{gray}{0.06} & \color{gray}{0.09} & \color{gray}{0.20} \\
     \bottomrule
     \end{tabular}
     \end{center}
@@ -385,11 +385,11 @@
 
     \midrule
      \textsc{un}  & 0.21 & 0.14 & 0.38 \\
-     \textsc{mon} & 0.16 & 0.10 & 0.29 \\
-     \textsc{iio} & 0.13 & 0.11 & 0.29 \\
-     \textsc{dm}  & 0.14 & 0.10 & 0.27 \\
-     \textsc{lcr} & 0.10 & 0.07 & 0.21 \\
-     \textsc{rm}  & 0.08 & 0.07 & 0.18 \\
+     \textsc{mon} & \color{gray}{0.16} & 0.10 & 0.29 \\
+     \textsc{iio} & 0.13 & 0.11 & \color{gray}{0.29} \\
+     \textsc{dm}  & \color{gray}{0.14} & \color{gray}{0.10} & 0.27 \\
+     \textsc{lcr} & \color{gray}{0.10} & \color{gray}{0.07} & \color{gray}{0.21} \\
+     \textsc{rm}  & \color{gray}{0.08} & \color{gray}{0.07} & \color{gray}{0.18} \\
     \bottomrule
     \end{tabular}
     \end{center}
@@ -404,8 +404,8 @@
 
     \begin{outline}
         \1 Person monotonicity versus item ordering
-            \2 Precision and/or aggregation 
-            \2 Formally, people and items are symmetric; in the real world, we rarely treat them symmetrically.  
+            \2 Precision and/or aggregation
+            \2 Formally, people and items are symmetric; in the real world, we rarely treat them symmetrically.
 
         \vspace{0.25cm}
 
@@ -420,14 +420,14 @@
 
 \begin{frame}
     \frametitle{Next steps}
-    
+
     \begin{outline}
         \1 Can we manipulate data generation such that we can accurately predict changes in the proportion of violations?
-        
+
         \vspace{0.25cm}
-        
-        \1 Are the double cancelation results idiosyncratic, or do they apply more generally?  
-       
+
+        \1 Are the double cancelation results idiosyncratic, or do they apply more generally?
+
     \end{outline}
 
 \end{frame}
@@ -487,4 +487,4 @@
 \begin{frame}
     \frametitle{}
 
-\end{frame} 
+\end{frame}
